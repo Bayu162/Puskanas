@@ -1,213 +1,374 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panduan Peserta — PUSKANAS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panduan penggunaan aplikasi PUSKANAS untuk peserta kompetisi.">
+  <title>Panduan Peserta — PUSKANAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Panduan v2: seluruh selector diisolasi agar tidak bentrok dengan style halaman lain. */
+    .guidev2-page {
+      --g-blue:#155faa; --g-blue-dark:#0e4b87; --g-blue-soft:#eaf3fb;
+      --g-yellow:#fcc910; --g-orange:#fc7801; --g-ink:#17324b;
+      --g-muted:#65798b; --g-line:#dbe6ee; --g-surface:#ffffff;
+      background-color:#fffaf0;
+      background-image:
+        radial-gradient(circle at 12% 18%,rgba(21,95,170,.035) 0 10px,transparent 11px),
+        radial-gradient(circle at 82% 33%,rgba(252,120,1,.04) 0 14px,transparent 15px),
+        radial-gradient(circle at 48% 78%,rgba(252,201,16,.055) 0 18px,transparent 19px);
+      background-size:220px 210px,330px 310px,430px 390px;
+      color:var(--g-ink);
+    }
+    .guidev2-page header {background:rgba(255,255,255,.96);border-bottom:1px solid rgba(21,95,170,.1)}
+    .guidev2-page .header-inner {max-width:1240px;padding:20px 24px}
+    .guidev2-page .guidev2-header-link {margin-left:auto;margin-right:18px;color:#52697b;font-size:.86rem;font-weight:700;text-decoration:none}
+    .guidev2-page .guidev2-header-link:hover {color:var(--g-blue)}
+    .guidev2-shell {width:min(1180px,calc(100% - 40px));margin:0 auto;padding:34px 0 86px}
+    .guidev2-hero {position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:48px;align-items:center;overflow:hidden;padding:58px;border-radius:30px;background:linear-gradient(135deg,#155faa 0%,#104d8d 100%);box-shadow:0 22px 55px rgba(14,69,124,.16)}
+    .guidev2-hero::before {content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 18%,rgba(255,255,255,.14) 0 9px,transparent 10px) 0 0/110px 104px,radial-gradient(circle at 88% 76%,rgba(252,201,16,.17) 0 15px,transparent 16px) 0 0/184px 174px}
+    .guidev2-hero-copy,.guidev2-flow {position:relative;z-index:1}
+    .guidev2-eyebrow,.guidev2-kicker,.guidev2-label {display:inline-flex;align-items:center;gap:9px;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .guidev2-eyebrow {margin-bottom:18px;color:#fff}
+    .guidev2-eyebrow::before,.guidev2-kicker::before {content:"";width:22px;height:3px;border-radius:99px;background:var(--g-yellow)}
+    .guidev2-hero h1 {min-height:0;max-width:700px;margin:0 0 18px;color:#fff;font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(2.45rem,4.2vw,4.15rem);line-height:1.05;letter-spacing:-.045em}
+    .guidev2-hero-copy>p {max-width:660px;margin:0 0 28px;color:rgba(255,255,255,.8);font-size:1rem;line-height:1.75}
+    .guidev2-actions {display:flex;flex-wrap:wrap;gap:12px}
+    .guidev2-primary,.guidev2-secondary {display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 19px;border-radius:13px;font-size:.87rem;font-weight:800;text-decoration:none;transition:transform .2s ease,background .2s ease}
+    .guidev2-primary {gap:9px;background:var(--g-yellow);color:#17324b}
+    .guidev2-secondary {border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.09);color:#fff}
+    .guidev2-primary:hover,.guidev2-secondary:hover {transform:translateY(-2px)}
+    .guidev2-primary svg,.guidev2-open-app svg {width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .guidev2-flow {padding:23px;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.11);backdrop-filter:blur(8px)}
+    .guidev2-flow-head {display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+    .guidev2-flow-head span {color:rgba(255,255,255,.66);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .guidev2-flow-head strong {color:#fff;font-family:"Plus Jakarta Sans",sans-serif;font-size:1rem}
+    .guidev2-flow-list {display:grid;gap:8px}
+    .guidev2-flow-item {display:grid;grid-template-columns:39px 1fr;gap:12px;align-items:center;padding:11px;border-radius:14px;background:rgba(255,255,255,.1)}
+    .guidev2-flow-item>b {display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:#fff;color:var(--g-blue);font-size:.73rem}
+    .guidev2-flow-item strong {display:block;color:#fff;font-size:.82rem}
+    .guidev2-flow-item small {display:block;margin-top:3px;color:rgba(255,255,255,.64);font-size:.69rem}
+    .guidev2-section {margin-top:66px}
+    .guidev2-heading {display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,470px);gap:42px;align-items:end;margin-bottom:24px}
+    .guidev2-kicker,.guidev2-label {color:var(--g-orange)}
+    .guidev2-heading h2,.guidev2-content-head h2 {margin:10px 0 0;color:var(--g-ink);font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.15;letter-spacing:-.035em}
+    .guidev2-heading>p,.guidev2-content-head>p {margin:0;color:var(--g-muted);font-size:.92rem;line-height:1.7}
+    .guidev2-quick-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .guidev2-quick {display:grid;grid-template-columns:44px minmax(0,1fr) 28px;gap:13px;align-items:center;min-height:82px;padding:14px 16px;border:1px solid rgba(21,95,170,.12);border-radius:17px;background:rgba(255,255,255,.94);color:inherit;text-decoration:none;box-shadow:0 8px 24px rgba(18,65,110,.045);transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+    .guidev2-quick:hover {transform:translateY(-2px);border-color:rgba(21,95,170,.28);box-shadow:0 14px 28px rgba(18,65,110,.08)}
+    .guidev2-quick>span {display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--g-blue-soft);color:var(--g-blue);font-size:.72rem;font-weight:850}
+    .guidev2-quick:nth-child(3n+2)>span {background:#fff6d6;color:#7b6100}
+    .guidev2-quick:nth-child(3n)>span {background:#fff0e3;color:#c65d00}
+    .guidev2-quick strong {display:block;color:var(--g-ink);font-family:"Plus Jakarta Sans",sans-serif;font-size:.91rem}
+    .guidev2-quick small {display:block;margin-top:4px;color:var(--g-muted);font-size:.74rem;line-height:1.45}
+    .guidev2-quick>svg,.guidev2-chevron svg {width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+    .guidev2-quick>svg {color:#8da1b0}
+    .guidev2-content-head {max-width:760px;margin-bottom:24px}
+    .guidev2-content-head>p {margin-top:12px}
+    .guidev2-list {display:grid;gap:13px}
+    .guidev2-item {scroll-margin-top:100px;overflow:hidden;border:1px solid rgba(21,95,170,.13);border-radius:19px;background:rgba(255,255,255,.97);box-shadow:0 8px 24px rgba(18,65,110,.05)}
+    .guidev2-item:target {border-color:rgba(252,120,1,.55);box-shadow:0 0 0 4px rgba(252,120,1,.09)}
+    .guidev2-item[open] {border-color:rgba(21,95,170,.3)}
+    .guidev2-item>summary {display:grid;grid-template-columns:49px minmax(0,1fr) 38px;gap:14px;align-items:center;min-height:84px;padding:16px 18px;cursor:pointer;list-style:none}
+    .guidev2-item>summary::-webkit-details-marker {display:none}
+    .guidev2-number {display:grid;place-items:center;width:49px;height:49px;border-radius:15px;background:var(--g-blue-soft);color:var(--g-blue);font-size:.75rem;font-weight:850}
+    .guidev2-summary-copy {display:grid;gap:4px}
+    .guidev2-summary-copy strong {color:var(--g-ink);font-family:"Plus Jakarta Sans",sans-serif;font-size:1rem}
+    .guidev2-summary-copy small {color:var(--g-muted);font-size:.76rem;line-height:1.45}
+    .guidev2-chevron {display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:#f2f6f9;color:var(--g-blue);transition:transform .2s ease,background .2s ease,color .2s ease}
+    .guidev2-item[open] .guidev2-chevron {transform:rotate(180deg);background:var(--g-blue);color:#fff}
+    .guidev2-body {display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:24px;padding:26px;border-top:1px solid var(--g-line);background:linear-gradient(180deg,rgba(234,243,251,.45),rgba(255,255,255,0) 150px)}
+    .guidev2-label {margin-bottom:16px}
+    .guidev2-steps {counter-reset:step;display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .guidev2-steps li {counter-increment:step;position:relative;min-height:40px;padding:8px 0 8px 49px;color:var(--g-ink);font-size:.87rem;line-height:1.65}
+    .guidev2-steps li::before {content:counter(step);position:absolute;top:4px;left:0;display:grid;place-items:center;width:35px;height:35px;border-radius:11px;background:var(--g-blue-soft);color:var(--g-blue);font-size:.72rem;font-weight:850}
+    .guidev2-chip {display:inline-flex;padding:2px 7px;border-radius:7px;background:#fff0e3;color:#b95700;font-size:.78rem;font-weight:750}
+    .guidev2-body-aside {display:grid;align-content:start;gap:11px}
+    .guidev2-purpose,.guidev2-note {padding:16px;border-radius:14px}
+    .guidev2-purpose {border:1px solid rgba(21,95,170,.12);background:#fff}
+    .guidev2-note {background:#fff6d6}
+    .guidev2-purpose span,.guidev2-note span {display:block;margin-bottom:7px;color:var(--g-ink);font-size:.73rem;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+    .guidev2-purpose p,.guidev2-note p {margin:0;color:var(--g-muted);font-size:.79rem;line-height:1.6}
+    .guidev2-note p {color:#685a30}
+    .guidev2-open-app {display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 15px;border-radius:12px;background:var(--g-blue);color:#fff;font-size:.8rem;font-weight:800;text-decoration:none}
+    .guidev2-help {display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:56px;padding:30px 34px;border-radius:22px;background:linear-gradient(135deg,#155faa,#104b87);color:#fff}
+    .guidev2-help h2 {margin:0 0 7px;color:#fff;font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(1.4rem,2.4vw,2rem)}
+    .guidev2-help p {margin:0;color:rgba(255,255,255,.73);font-size:.86rem;line-height:1.6}
+    .guidev2-help a {flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 17px;border-radius:12px;background:var(--g-yellow);color:#17324b;font-size:.82rem;font-weight:850;text-decoration:none}
+    @media(max-width:900px){.guidev2-hero{grid-template-columns:1fr;padding:44px}.guidev2-flow{max-width:620px}.guidev2-heading{grid-template-columns:1fr;gap:12px;align-items:start}.guidev2-body{grid-template-columns:1fr}}
+    @media(max-width:680px){.guidev2-page .header-inner{padding:16px}.guidev2-page .logo img{height:28px}.guidev2-page .guidev2-header-link{display:none}.guidev2-page .btn-app{padding:10px 13px;font-size:.75rem}.guidev2-shell{width:min(100% - 28px,1180px);padding-top:18px}.guidev2-hero{gap:28px;padding:34px 23px;border-radius:23px}.guidev2-hero h1{font-size:clamp(2.05rem,10vw,3rem)}.guidev2-actions{flex-direction:column}.guidev2-primary,.guidev2-secondary{width:100%}.guidev2-section{margin-top:52px}.guidev2-quick-grid{grid-template-columns:1fr}.guidev2-quick small{display:none}.guidev2-item>summary{grid-template-columns:43px minmax(0,1fr) 32px;gap:11px;min-height:74px;padding:13px}.guidev2-number{width:43px;height:43px}.guidev2-summary-copy small{display:none}.guidev2-chevron{width:32px;height:32px}.guidev2-body{padding:20px 15px}.guidev2-help{align-items:flex-start;flex-direction:column;padding:26px 22px}.guidev2-help a{width:100%}}
+    @media(prefers-reduced-motion:reduce){.guidev2-page *{scroll-behavior:auto!important}.guidev2-primary,.guidev2-secondary,.guidev2-quick,.guidev2-chevron{transition:none}}
+  </style>
 </head>
-<body>
+<body class="guidev2-page">
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo"><img src="logo.png" alt="PUSKANAS — Pusat Kejuaraan Sains Nasional"></a>
-      <nav></nav>
+      <a class="guidev2-header-link" href="index.html">Kembali ke Beranda</a>
       <a href="https://app.puskanas.id/" class="btn-app" target="_blank" rel="noopener">Masuk ke Aplikasi</a>
     </div>
   </header>
 
-  <div class="wrap panduan-wrap">
-
-    <div class="panduan-hero">
-      <span class="panduan-eyebrow">Bantuan</span>
-      <h1>Panduan Peserta</h1>
-      <p>Ikuti langkah-langkah berikut untuk menggunakan aplikasi PUSKANAS, dari membuat akun hingga melihat hasil ujian.</p>
-    </div>
-
-    <nav class="panduan-toc" aria-label="Daftar panduan">
-      <a href="#akun">1. Membuat Akun</a>
-      <a href="#masuk">2. Masuk</a>
-      <a href="#profil">3. Melengkapi Profil</a>
-      <a href="#pilih-event">4. Memilih Event</a>
-      <a href="#daftar">5. Mendaftar</a>
-      <a href="#unggah">6. Mengunggah Persyaratan</a>
-      <a href="#bayar">7. Melakukan Pembayaran</a>
-      <a href="#ujian">8. Mengikuti Ujian</a>
-      <a href="#hasil">9. Melihat Hasil</a>
-      <a href="#admin">10. Menghubungi Admin</a>
-    </nav>
-
-    <div class="panduan-list">
-
-      <details class="panduan-item" id="akun" open>
-        <summary><span class="panduan-num">1</span><span class="panduan-judul">Cara Membuat Akun</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Membuat akun baru agar dapat mengakses seluruh layanan aplikasi PUSKANAS.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar halaman daftar akun">Tangkapan layar: Halaman Daftar Akun</div>
-          <ol class="panduan-steps">
-            <li>Buka aplikasi PUSKANAS, lalu ketuk tombol <span class="panduan-tombol">Daftar</span> di halaman awal.</li>
-            <li>Isi nama lengkap, alamat email aktif, dan kata sandi.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Buat Akun</span> untuk melanjutkan.</li>
-            <li>Buka email yang didaftarkan dan ketuk tautan verifikasi yang dikirimkan sistem.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Gunakan email aktif karena tautan verifikasi dan seluruh informasi kompetisi akan dikirim ke email tersebut.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
+  <main class="guidev2-shell">
+    <section class="guidev2-hero" aria-labelledby="guidev2-title">
+      <div class="guidev2-hero-copy">
+        <span class="guidev2-eyebrow">Pusat Bantuan Peserta</span>
+        <h1 id="guidev2-title">Panduan aplikasi PUSKANAS yang lebih mudah diikuti</h1>
+        <p>Temukan langkah yang kamu perlukan, mulai dari membuat akun, mendaftar kompetisi, mengikuti ujian, hingga melihat hasil.</p>
+        <div class="guidev2-actions">
+          <a class="guidev2-primary" href="#daftar-panduan">Pilih panduan <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="guidev2-secondary" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi</a>
         </div>
-      </details>
-
-      <details class="panduan-item" id="masuk">
-        <summary><span class="panduan-num">2</span><span class="panduan-judul">Cara Masuk</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Masuk ke akun yang sudah terdaftar untuk mengakses dasbor peserta.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar halaman masuk">Tangkapan layar: Halaman Masuk</div>
-          <ol class="panduan-steps">
-            <li>Buka aplikasi, lalu ketuk tombol <span class="panduan-tombol">Masuk</span>.</li>
-            <li>Masukkan email dan kata sandi yang terdaftar.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Masuk</span> untuk mengakses dasbor.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Jika lupa kata sandi, gunakan tautan <em>Lupa Kata Sandi</em> pada halaman masuk, jangan membuat akun baru.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="profil">
-        <summary><span class="panduan-num">3</span><span class="panduan-judul">Cara Melengkapi Profil</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Melengkapi data diri agar dapat mendaftar event dan menerima sertifikat dengan data yang benar.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar halaman profil">Tangkapan layar: Halaman Lengkapi Profil</div>
-          <ol class="panduan-steps">
-            <li>Dari dasbor, buka menu <span class="panduan-tombol">Profil Saya</span>.</li>
-            <li>Isi data sekolah/institusi, jenjang, dan nomor kontak yang aktif.</li>
-            <li>Unggah foto profil jika diperlukan.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Simpan Profil</span>.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Pastikan nama dan nama sekolah/institusi ditulis sesuai dokumen resmi karena akan digunakan pada sertifikat.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="pilih-event">
-        <summary><span class="panduan-num">4</span><span class="panduan-judul">Cara Memilih Event</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Menemukan dan memilih event kompetisi yang sesuai dengan jenjang dan minat.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar katalog event"> Tangkapan layar: Katalog Event</div>
-          <ol class="panduan-steps">
-            <li>Buka menu <span class="panduan-tombol">Kompetisi</span> pada dasbor.</li>
-            <li>Gunakan filter jenjang, bidang, atau brand penyelenggara untuk menyaring pilihan.</li>
-            <li>Ketuk salah satu kartu event untuk melihat detail lengkap.</li>
-            <li>Periksa jadwal dan syarat pada halaman detail sebelum melanjutkan.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Perhatikan tanggal tutup pendaftaran pada setiap event, karena setiap brand memiliki jadwal yang berbeda.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="daftar">
-        <summary><span class="panduan-num">5</span><span class="panduan-judul">Cara Mendaftar</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Mendaftarkan diri sebagai peserta pada event yang sudah dipilih.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar formulir pendaftaran">Tangkapan layar: Formulir Pendaftaran</div>
-          <ol class="panduan-steps">
-            <li>Pada halaman detail event, ketuk tombol <span class="panduan-tombol">Daftar Sekarang</span>.</li>
-            <li>Periksa kembali data profil yang tampil pada formulir.</li>
-            <li>Centang kotak persetujuan syarat dan ketentuan event.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Kirim Pendaftaran</span>.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Setelah pendaftaran terkirim, data peserta tidak dapat diubah, kecuali menghubungi admin.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="unggah">
-        <summary><span class="panduan-num">6</span><span class="panduan-judul">Cara Mengunggah Persyaratan</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Melengkapi dokumen persyaratan yang diminta oleh event.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar unggah dokumen">Tangkapan layar: Halaman Unggah Dokumen</div>
-          <ol class="panduan-steps">
-            <li>Buka menu <span class="panduan-tombol">Persyaratan</span> pada halaman pendaftaran saya.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Unggah File</span> pada setiap jenis dokumen.</li>
-            <li>Pilih file dari perangkat, lalu tunggu hingga status berubah menjadi <em>Terunggah</em>.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Simpan</span> setelah semua dokumen lengkap.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Perhatikan format dan ukuran maksimal file yang tertera pada setiap kolom unggahan sebelum mengirim.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="bayar">
-        <summary><span class="panduan-num">7</span><span class="panduan-judul">Cara Melakukan Pembayaran (Jika Tersedia)</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Menyelesaikan pembayaran biaya pendaftaran untuk event berbayar.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar halaman pembayaran">Tangkapan layar: Halaman Pembayaran</div>
-          <ol class="panduan-steps">
-            <li>Buka menu <span class="panduan-tombol">Pembayaran</span> pada halaman pendaftaran saya.</li>
-            <li>Pilih metode pembayaran yang tersedia.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Bayar Sekarang</span> dan selesaikan sesuai instruksi metode yang dipilih.</li>
-            <li>Tunggu status berubah menjadi <em>Lunas</em> setelah pembayaran diverifikasi.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Simpan bukti pembayaran. Jika status belum berubah setelah 1x24 jam, hubungi admin.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="ujian">
-        <summary><span class="panduan-num">8</span><span class="panduan-judul">Cara Mengikuti Ujian</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Mengikuti sesi ujian kompetisi secara daring sesuai jadwal yang ditetapkan.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar halaman ujian">Tangkapan layar: Halaman Mulai Ujian</div>
-          <ol class="panduan-steps">
-            <li>Masuk ke menu <span class="panduan-tombol">Ujian Saya</span> beberapa menit sebelum jadwal dimulai.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Mulai Ujian</span> saat status berubah menjadi aktif.</li>
-            <li>Kerjakan soal sesuai waktu yang tersedia pada penghitung waktu di layar.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Kumpulkan Jawaban</span> sebelum waktu habis.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Pastikan koneksi internet stabil. Jangan menutup aplikasi atau me-refresh halaman selama ujian berlangsung.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="hasil">
-        <summary><span class="panduan-num">9</span><span class="panduan-judul">Cara Melihat Hasil</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Melihat hasil dan status kelulusan setelah pengumuman diterbitkan.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar halaman hasil">Tangkapan layar: Halaman Hasil Ujian</div>
-          <ol class="panduan-steps">
-            <li>Buka menu <span class="panduan-tombol">Hasil</span> pada dasbor peserta.</li>
-            <li>Pilih event yang ingin dilihat hasilnya.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Lihat Sertifikat</span> jika dinyatakan lulus, untuk mengunduh sertifikat.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Hasil hanya tampil setelah tanggal pengumuman resmi. Pantau juga Papan Pengumuman untuk info tambahan.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-      <details class="panduan-item" id="admin">
-        <summary><span class="panduan-num">10</span><span class="panduan-judul">Cara Menghubungi Admin</span></summary>
-        <div class="panduan-body">
-          <p class="panduan-tujuan"><strong>Tujuan:</strong> Mendapatkan bantuan langsung dari admin jika mengalami kendala.</p>
-          <div class="panduan-screenshot" role="img" aria-label="Tangkapan layar halaman bantuan">Tangkapan layar: Halaman Hubungi Admin</div>
-          <ol class="panduan-steps">
-            <li>Buka menu <span class="panduan-tombol">Bantuan</span> pada dasbor peserta.</li>
-            <li>Ketuk tombol <span class="panduan-tombol">Hubungi Admin</span> untuk memilih kanal WhatsApp atau email.</li>
-            <li>Sertakan nama, event yang diikuti, dan detail kendala agar direspons lebih cepat.</li>
-          </ol>
-          <p class="panduan-catatan"><strong>Catatan penting:</strong> Cek dahulu halaman FAQ, kendala umum biasanya sudah ada jawabannya di sana.</p>
-          <a href="https://app.puskanas.id/" class="btn-primary panduan-link" target="_blank" rel="noopener">Buka Aplikasi &rarr;</a>
-        </div>
-      </details>
-
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-bottom">
-        <p class="footer-copyright">© 2026 PUSKANAS. Seluruh hak cipta dilindungi.</p>
       </div>
-    </div>
-  </footer>
+      <aside class="guidev2-flow" aria-label="Ringkasan alur peserta">
+        <div class="guidev2-flow-head"><div><span>Alur peserta</span><strong>4 tahap utama</strong></div></div>
+        <div class="guidev2-flow-list">
+          <div class="guidev2-flow-item"><b>01</b><div><strong>Akun dan profil</strong><small>Siapkan identitas peserta</small></div></div>
+          <div class="guidev2-flow-item"><b>02</b><div><strong>Pilih dan daftar event</strong><small>Temukan kompetisi yang tepat</small></div></div>
+          <div class="guidev2-flow-item"><b>03</b><div><strong>Ikuti ujian</strong><small>Kerjakan sesuai jadwal</small></div></div>
+          <div class="guidev2-flow-item"><b>04</b><div><strong>Hasil dan bantuan</strong><small>Cek hasil atau hubungi admin</small></div></div>
+        </div>
+      </aside>
+    </section>
 
+    <section class="guidev2-section" id="daftar-panduan" aria-labelledby="guidev2-quick-title">
+      <div class="guidev2-heading">
+        <div><span class="guidev2-kicker">Akses cepat</span><h2 id="guidev2-quick-title">Pilih panduan yang dibutuhkan</h2></div>
+        <p>Tidak perlu membaca semuanya secara berurutan. Pilih proses yang sedang dilakukan atau bagian yang mengalami kendala.</p>
+      </div>
+      <div class="guidev2-quick-grid"><a class="guidev2-quick" href="#akun"><span>01</span><div><strong>Membuat Akun</strong><small>Daftarkan email aktif dan verifikasi akunmu.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#masuk"><span>02</span><div><strong>Masuk ke Akun</strong><small>Akses dasbor menggunakan akun yang terdaftar.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#profil"><span>03</span><div><strong>Melengkapi Profil</strong><small>Pastikan data peserta dan sekolah sudah benar.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#pilih-event"><span>04</span><div><strong>Memilih Event</strong><small>Temukan kompetisi sesuai jenjang dan minatmu.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#daftar"><span>05</span><div><strong>Mendaftar Event</strong><small>Kirim pendaftaran untuk event yang dipilih.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#unggah"><span>06</span><div><strong>Mengunggah Persyaratan</strong><small>Lengkapi dokumen yang dibutuhkan event.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#bayar"><span>07</span><div><strong>Melakukan Pembayaran</strong><small>Khusus event yang menyediakan pembayaran.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#ujian"><span>08</span><div><strong>Mengikuti Ujian</strong><small>Masuk dan kerjakan ujian sesuai jadwal.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#hasil"><span>09</span><div><strong>Melihat Hasil</strong><small>Periksa pengumuman dan sertifikat.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+<a class="guidev2-quick" href="#admin"><span>10</span><div><strong>Menghubungi Admin</strong><small>Dapatkan bantuan saat mengalami kendala.</small></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
+    </section>
+
+    <section class="guidev2-section" aria-labelledby="guidev2-content-title">
+      <div class="guidev2-content-head"><span class="guidev2-kicker">Panduan lengkap</span><h2 id="guidev2-content-title">Langkah penggunaan aplikasi</h2><p>Buka setiap bagian untuk melihat urutan langkah, tujuan, dan catatan penting.</p></div>
+      <div class="guidev2-list">
+<details class="guidev2-item" id="akun" open>
+  <summary>
+    <span class="guidev2-number">01</span>
+    <span class="guidev2-summary-copy"><strong>Membuat Akun</strong><small>Daftarkan email aktif dan verifikasi akunmu.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka aplikasi PUSKANAS, lalu pilih tombol <span class="guidev2-chip">Daftar</span> di halaman awal.</li>
+<li>Isi nama lengkap, alamat email aktif, dan kata sandi.</li>
+<li>Pilih tombol <span class="guidev2-chip">Buat Akun</span> untuk melanjutkan.</li>
+<li>Buka email yang didaftarkan dan pilih tautan verifikasi yang dikirimkan sistem.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Membuat akun baru agar dapat mengakses seluruh layanan aplikasi PUSKANAS.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Gunakan email aktif karena tautan verifikasi dan seluruh informasi kompetisi akan dikirim ke email tersebut.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="masuk">
+  <summary>
+    <span class="guidev2-number">02</span>
+    <span class="guidev2-summary-copy"><strong>Masuk ke Akun</strong><small>Akses dasbor menggunakan akun yang terdaftar.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka aplikasi, lalu pilih tombol <span class="guidev2-chip">Masuk</span>.</li>
+<li>Masukkan email dan kata sandi yang terdaftar.</li>
+<li>Pilih tombol <span class="guidev2-chip">Masuk</span> untuk mengakses dasbor.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Masuk ke akun yang sudah terdaftar untuk mengakses dasbor peserta.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Jika lupa kata sandi, gunakan menu Lupa Kata Sandi pada halaman masuk dan jangan membuat akun baru.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="profil">
+  <summary>
+    <span class="guidev2-number">03</span>
+    <span class="guidev2-summary-copy"><strong>Melengkapi Profil</strong><small>Pastikan data peserta dan sekolah sudah benar.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Dari dasbor, buka menu <span class="guidev2-chip">Profil Saya</span>.</li>
+<li>Isi data sekolah atau institusi, jenjang, dan nomor kontak yang aktif.</li>
+<li>Unggah foto profil jika diperlukan.</li>
+<li>Pilih tombol <span class="guidev2-chip">Simpan Profil</span>.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Melengkapi data diri agar dapat mendaftar event dan menerima sertifikat dengan data yang benar.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Pastikan nama dan sekolah ditulis sesuai dokumen resmi karena data tersebut digunakan pada sertifikat.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="pilih-event">
+  <summary>
+    <span class="guidev2-number">04</span>
+    <span class="guidev2-summary-copy"><strong>Memilih Event</strong><small>Temukan kompetisi sesuai jenjang dan minatmu.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka menu <span class="guidev2-chip">Kompetisi</span> pada dasbor.</li>
+<li>Gunakan filter jenjang, bidang, atau brand penyelenggara.</li>
+<li>Pilih salah satu event untuk membuka informasi lengkap.</li>
+<li>Periksa jadwal dan persyaratan sebelum melanjutkan.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Menemukan dan memilih event kompetisi yang sesuai dengan jenjang serta minat peserta.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Perhatikan batas akhir pendaftaran karena setiap event dan brand dapat memiliki jadwal yang berbeda.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="daftar">
+  <summary>
+    <span class="guidev2-number">05</span>
+    <span class="guidev2-summary-copy"><strong>Mendaftar Event</strong><small>Kirim pendaftaran untuk event yang dipilih.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Pada halaman detail event, pilih <span class="guidev2-chip">Daftar Sekarang</span>.</li>
+<li>Periksa kembali data profil yang tampil.</li>
+<li>Setujui syarat dan ketentuan event.</li>
+<li>Pilih tombol <span class="guidev2-chip">Kirim Pendaftaran</span>.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Mendaftarkan diri sebagai peserta pada event yang sudah dipilih.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Periksa kembali seluruh data sebelum dikirim agar tidak terjadi kesalahan pada data peserta.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="unggah">
+  <summary>
+    <span class="guidev2-number">06</span>
+    <span class="guidev2-summary-copy"><strong>Mengunggah Persyaratan</strong><small>Lengkapi dokumen yang dibutuhkan event.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka menu <span class="guidev2-chip">Persyaratan</span> pada halaman pendaftaran.</li>
+<li>Pilih <span class="guidev2-chip">Unggah File</span> pada setiap jenis dokumen.</li>
+<li>Pilih file dari perangkat dan tunggu sampai statusnya terunggah.</li>
+<li>Pilih tombol <span class="guidev2-chip">Simpan</span> setelah semua dokumen lengkap.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Melengkapi dokumen persyaratan yang diminta oleh event.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Perhatikan format dan ukuran maksimal file yang tertera pada setiap kolom unggahan.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="bayar">
+  <summary>
+    <span class="guidev2-number">07</span>
+    <span class="guidev2-summary-copy"><strong>Melakukan Pembayaran</strong><small>Khusus event yang menyediakan pembayaran.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka menu <span class="guidev2-chip">Pembayaran</span> pada halaman pendaftaran.</li>
+<li>Pilih metode pembayaran yang tersedia.</li>
+<li>Pilih <span class="guidev2-chip">Bayar Sekarang</span> dan ikuti instruksi.</li>
+<li>Tunggu hingga status pembayaran berubah menjadi Lunas.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Menyelesaikan biaya pendaftaran untuk event berbayar jika fitur tersebut tersedia.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Simpan bukti pembayaran. Apabila status belum berubah setelah 1x24 jam, hubungi admin.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="ujian">
+  <summary>
+    <span class="guidev2-number">08</span>
+    <span class="guidev2-summary-copy"><strong>Mengikuti Ujian</strong><small>Masuk dan kerjakan ujian sesuai jadwal.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka menu <span class="guidev2-chip">Ujian Saya</span> beberapa menit sebelum jadwal.</li>
+<li>Pilih <span class="guidev2-chip">Mulai Ujian</span> saat status ujian aktif.</li>
+<li>Kerjakan soal sesuai waktu yang tersedia.</li>
+<li>Pilih <span class="guidev2-chip">Kumpulkan Jawaban</span> sebelum waktu habis.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Mengikuti sesi ujian kompetisi secara daring sesuai jadwal yang ditetapkan.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Pastikan koneksi internet stabil. Jangan menutup aplikasi atau memuat ulang halaman selama ujian.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="hasil">
+  <summary>
+    <span class="guidev2-number">09</span>
+    <span class="guidev2-summary-copy"><strong>Melihat Hasil</strong><small>Periksa pengumuman dan sertifikat.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka menu <span class="guidev2-chip">Hasil</span> pada dasbor peserta.</li>
+<li>Pilih event yang ingin dilihat hasilnya.</li>
+<li>Pilih <span class="guidev2-chip">Lihat Sertifikat</span> apabila fitur sertifikat sudah tersedia.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Melihat hasil dan status setelah pengumuman resmi diterbitkan.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Hasil hanya tampil setelah tanggal pengumuman resmi. Pantau juga halaman Papan Pengumuman.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details>
+<details class="guidev2-item" id="admin">
+  <summary>
+    <span class="guidev2-number">10</span>
+    <span class="guidev2-summary-copy"><strong>Menghubungi Admin</strong><small>Dapatkan bantuan saat mengalami kendala.</small></span>
+    <span class="guidev2-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+  </summary>
+  <div class="guidev2-body">
+    <div class="guidev2-body-main">
+      <span class="guidev2-label">Langkah-langkah</span>
+      <ol class="guidev2-steps"><li>Buka menu <span class="guidev2-chip">Bantuan</span> pada dasbor peserta.</li>
+<li>Pilih <span class="guidev2-chip">Hubungi Admin</span> dan tentukan kanal yang tersedia.</li>
+<li>Sertakan nama, event yang diikuti, dan detail kendala agar dapat diperiksa lebih cepat.</li></ol>
+    </div>
+    <aside class="guidev2-body-aside">
+      <div class="guidev2-purpose"><span>Tujuan</span><p>Mendapatkan bantuan langsung dari admin apabila mengalami kendala.</p></div>
+      <div class="guidev2-note"><span>Catatan penting</span><p>Periksa halaman FAQ terlebih dahulu karena jawaban untuk kendala umum mungkin sudah tersedia.</p></div>
+      <a class="guidev2-open-app" href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka aplikasi <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</details></div>
+    </section>
+
+    <section class="guidev2-help" aria-label="Bantuan peserta">
+      <div><h2>Masih mengalami kendala?</h2><p>Buka aplikasi dan hubungi admin melalui menu Bantuan dengan menyertakan detail kendala yang dialami.</p></div>
+      <a href="https://app.puskanas.id/" target="_blank" rel="noopener">Buka pusat bantuan</a>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><div class="footer-bottom"><p class="footer-copyright">© 2026 PUSKANAS. Seluruh hak cipta dilindungi.</p></div></div></footer>
 </body>
 </html>
