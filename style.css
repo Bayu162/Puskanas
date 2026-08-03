@@ -1503,7 +1503,7 @@ footer::after {
   margin: 0;
   color: #687789;
   font-size: 0.76rem;
-  line-height: 1.48;
+  line-height: 1.49;
 }
 
 @media (hover: hover) and (pointer: fine) {
