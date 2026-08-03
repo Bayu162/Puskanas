@@ -522,84 +522,41 @@
       <div class="kurasi-intro">
         <span class="kurasi-eyebrow">Transparansi &amp; Kepercayaan Publik</span>
         <h2 id="kurasiTitle">Kurasi Ajang Kompetisi</h2>
-        <p><strong>Kurasi ajang</strong> adalah proses verifikasi dan penilaian kelayakan sebuah event oleh instansi/lembaga terkait sebelum event tersebut dinyatakan resmi terkurasi. Kurasi berbeda dengan penyelenggaraan: sebuah event bisa saja <strong>diselenggarakan</strong> oleh brand di ekosistem PUSKANAS, namun status <strong>terkurasi</strong> hanya diberikan setelah melalui tahapan verifikasi resmi dan disetujui oleh instansi terkait.</p>
+        <p><strong>Kurasi ajang</strong> adalah proses verifikasi dan penilaian kelayakan sebuah event oleh instansi/lembaga terkait sebelum event dinyatakan resmi terkurasi. Event yang <strong>diselenggarakan</strong> oleh brand di ekosistem PUSKANAS tidak otomatis <strong>terkurasi</strong> — status ini hanya diberikan setelah melalui tahapan verifikasi dan disetujui oleh instansi terkait.</p>
       </div>
 
-      <div class="kurasi-compare">
-        <div class="kurasi-compare-card">
-          <span class="kurasi-compare-tag">Event Diselenggarakan</span>
-          <p>Event yang dijalankan oleh salah satu brand di ekosistem PUSKANAS sesuai jadwal dan mekanismenya sendiri. Status kurasinya bisa berbeda-beda, mulai dari belum diajukan hingga sudah terkurasi.</p>
+      <div class="kurasi-timeline">
+        <div class="kurasi-tl-item">
+          <span class="kurasi-tl-dot kurasi-badge--belum"></span>
+          <div class="kurasi-tl-body">
+            <span class="kurasi-tl-label">Belum Diajukan</span>
+            <p>Event belum masuk proses pengajuan kurasi ke instansi terkait.</p>
+          </div>
         </div>
-        <div class="kurasi-compare-card">
-          <span class="kurasi-compare-tag">Event Terkurasi</span>
-          <p>Event yang telah melalui proses pengajuan dan verifikasi resmi, serta dinyatakan lolos kurasi oleh instansi/lembaga terkait. Bukan semua event yang diselenggarakan otomatis berstatus ini.</p>
+        <div class="kurasi-tl-item">
+          <span class="kurasi-tl-dot kurasi-badge--proses"></span>
+          <div class="kurasi-tl-body">
+            <span class="kurasi-tl-label">Dalam Proses</span>
+            <p>Pengajuan sudah dikirim dan sedang diverifikasi oleh instansi terkait.</p>
+          </div>
+        </div>
+        <div class="kurasi-tl-item">
+          <span class="kurasi-tl-dot kurasi-badge--revisi"></span>
+          <div class="kurasi-tl-body">
+            <span class="kurasi-tl-label">Perlu Revisi</span>
+            <p>Ada catatan dari instansi terkait yang perlu dilengkapi sebelum lanjut.</p>
+          </div>
+        </div>
+        <div class="kurasi-tl-item">
+          <span class="kurasi-tl-dot kurasi-badge--selesai"></span>
+          <div class="kurasi-tl-body">
+            <span class="kurasi-tl-label">Terkurasi</span>
+            <p>Event dinyatakan lolos dan disetujui resmi oleh instansi terkait.</p>
+          </div>
         </div>
       </div>
 
-      <div class="kurasi-status-block">
-        <h3>Status Pengajuan Setiap Event</h3>
-        <p>Setiap event menampilkan salah satu dari empat status berikut, beserta tanggal pembaruan terakhirnya. Status <strong>tidak</strong> otomatis "terkurasi" — hasil sepenuhnya mengikuti keputusan instansi terkait.</p>
-
-        <div class="kurasi-legend">
-          <span class="kurasi-badge kurasi-badge--belum">Belum Diajukan</span>
-          <span class="kurasi-badge kurasi-badge--proses">Dalam Proses</span>
-          <span class="kurasi-badge kurasi-badge--revisi">Perlu Revisi</span>
-          <span class="kurasi-badge kurasi-badge--selesai">Terkurasi</span>
-        </div>
-
-        <p class="kurasi-table-caption">Contoh tabel status</p>
-        <div class="kurasi-table-wrap">
-          <table class="kurasi-table">
-            <thead>
-              <tr>
-                <th>Event</th>
-                <th>Brand</th>
-                <th>Tahun</th>
-                <th>Status</th>
-                <th>Terakhir Diperbarui</th>
-                <th>Bukti</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Nama Event</td>
-                <td>PUSKANAS</td>
-                <td>2026</td>
-                <td><span class="kurasi-badge kurasi-badge--proses">Dalam Proses</span></td>
-                <td>Tanggal</td>
-                <td><a href="#">Lihat Dokumen</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="kurasi-table-note">Tabel di atas adalah contoh tampilan. Status dan tanggal pembaruan tiap event akan ditampilkan apa adanya sesuai data resmi, tanpa mengasumsikan seluruh event otomatis terkurasi.</p>
-      </div>
-
-      <div class="kurasi-links">
-        <a href="#" class="kurasi-link-card" target="_blank" rel="noopener">
-          <span class="kurasi-link-title">Link Verifikasi Resmi</span>
-          <span class="kurasi-link-desc">Tautan menuju sistem/instansi resmi tempat status kurasi dapat diverifikasi langsung.</span>
-        </a>
-        <a href="#" class="kurasi-link-card" target="_blank" rel="noopener">
-          <span class="kurasi-link-title">Dokumen Pendukung</span>
-          <span class="kurasi-link-desc">Surat, sertifikat, atau bukti resmi lain terkait proses pengajuan kurasi tiap event.</span>
-        </a>
-      </div>
-
-      <div class="kurasi-faq">
-        <h3>FAQ Kurasi</h3>
-        <details class="kurasi-faq-item">
-          <summary>Apakah semua event di PUSKANAS sudah terkurasi?</summary>
-          <p>Tidak. Status kurasi berbeda-beda untuk setiap event, mulai dari belum diajukan sampai terkurasi. Periksa status pada tabel di setiap halaman event.</p>
-        </details>
-        <details class="kurasi-faq-item">
-          <summary>Siapa yang menentukan hasil kurasi?</summary>
-          <p>Hasil kurasi ditentukan oleh instansi/lembaga terkait melalui proses verifikasi resmi, bukan oleh PUSKANAS secara sepihak.</p>
-        </details>
-        <a href="faq.html" class="kurasi-faq-more">Lihat semua FAQ kategori Kurasi &rarr;</a>
-      </div>
-
-      <p class="kurasi-disclaimer"><strong>Penting:</strong> PUSKANAS hanya menampilkan status kurasi apa adanya berdasarkan data resmi. Keputusan akhir kurasi sepenuhnya berada di tangan instansi/lembaga terkait, bukan ditentukan oleh PUSKANAS.</p>
+      <p class="kurasi-disclaimer"><strong>Penting:</strong> Status di atas ditampilkan apa adanya per event. Keputusan akhir kurasi sepenuhnya berada di tangan instansi/lembaga terkait, bukan ditentukan oleh PUSKANAS. Lihat <a href="faq.html">FAQ kategori Kurasi</a> untuk pertanyaan lainnya.</p>
 
     </div>
   </section>
