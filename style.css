@@ -1073,7 +1073,7 @@ footer::after {
 .akses-cepat-inner {
   position: relative;
   max-width: 1360px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0 44px;
 }
 
@@ -1339,13 +1339,13 @@ footer::after {
   --ekosistem-yellow: #fcc910;
   --ekosistem-orange: #fc7801;
   --ekosistem-cream: #fff9e9;
-  padding: 84px 0;
+  padding: 0 0;
   background: #f8f9fb;
 }
 
 .ekosistem-inner {
   max-width: 1360px;
-  margin: 0 auto;
+  margin: 0;
   
 }
 
