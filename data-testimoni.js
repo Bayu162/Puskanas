@@ -8,7 +8,7 @@ const TESTIMONI = [
     statusAsal: 'SMA Negeri 3 Jakarta',
     event: 'Olimpiade Sains Nasional (OSN)',
     tahun: 2026,
-    foto: 'assets/images/puskanas.webp',
+    foto: null,
     isi: 'Soal-soalnya menantang tapi pembahasannya jelas, bikin saya lebih siap menghadapi olimpiade tingkat provinsi.'
   },
   {
@@ -28,7 +28,7 @@ const TESTIMONI = [
     statusAsal: 'Universitas Indonesia',
     event: 'Festival Debat Bahasa Nasional (FDBN)',
     tahun: 2026,
-    foto: 'assets/images/presmanesia.webp',
+    foto: null,
     isi: 'Format debatnya kompetitif dan juri-jurinya memberi masukan yang membangun. Pengalaman yang benar-benar melatih cara berpikir.'
   },
   {
