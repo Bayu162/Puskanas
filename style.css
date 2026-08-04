@@ -3311,7 +3311,274 @@ footer::after {
   font-size: 0.9rem;
   line-height: 1.75;
 }
+/* =====================================================
+   CTA PENUTUP
+   ===================================================== */
 
+   .closing-cta {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eead2a;
+    color: #082556;
+    padding: 92px 24px;
+    isolation: isolate;
+  }
+  
+  /* Pattern transparan agar background tidak terlalu polos */
+  .closing-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.2;
+    background-image:
+      radial-gradient(
+        circle at 10% 20%,
+        rgba(255, 255, 255, 0.28) 0 5px,
+        transparent 6px
+      ),
+      radial-gradient(
+        circle at 78% 76%,
+        rgba(255, 255, 255, 0.18) 0 8px,
+        transparent 9px
+      ),
+      radial-gradient(
+        circle at 92% 18%,
+        rgba(8, 37, 86, 0.1) 0 6px,
+        transparent 7px
+      );
+    background-size:
+      86px 86px,
+      138px 138px,
+      112px 112px;
+    background-position:
+      0 0,
+      28px 18px,
+      16px 42px;
+  }
+  
+  .closing-cta__container {
+    width: min(100%, 1480px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(48px, 8vw, 130px);
+  }
+  
+  .closing-cta__content {
+    min-width: 0;
+  }
+  
+  .closing-cta__label {
+    margin: 0 0 30px;
+    color: #082556;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+  
+  .closing-cta__title {
+    max-width: 1050px;
+    margin: 0;
+    color: #082556;
+    font-family: inherit;
+    font-size: clamp(42px, 5.1vw, 80px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+  
+  /* Font tetap sama, hanya dibuat italic */
+  .closing-cta__title span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: italic;
+    letter-spacing: inherit;
+  }
+  
+  .closing-cta__actions {
+    width: min(100%, 280px);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  
+  .closing-cta__primary {
+    min-height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 24px;
+    border: 1px solid rgba(8, 37, 86, 0.08);
+    border-radius: 18px;
+    background-color: #ffffff;
+    color: #082556;
+    box-shadow: 0 14px 34px rgba(8, 37, 86, 0.1);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      transform 220ms ease,
+      box-shadow 220ms ease,
+      background-color 220ms ease;
+  }
+  
+  .closing-cta__primary::after {
+    content: "↗";
+    flex: 0 0 auto;
+    font-size: 19px;
+    line-height: 1;
+    transition: transform 220ms ease;
+  }
+  
+  .closing-cta__primary:hover {
+    transform: translateY(-3px);
+    background-color: #fffdf8;
+    box-shadow: 0 18px 40px rgba(8, 37, 86, 0.15);
+  }
+  
+  .closing-cta__primary:hover::after {
+    transform: translate(3px, -3px);
+  }
+  
+  .closing-cta__secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-inline: 4px;
+  }
+  
+  .closing-cta__secondary a {
+    position: relative;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    color: #082556;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+  
+  .closing-cta__secondary a::after {
+    content: "↗";
+    margin-left: 8px;
+    font-size: 14px;
+    transition: transform 200ms ease;
+  }
+  
+  .closing-cta__secondary a:hover::after {
+    transform: translate(3px, -3px);
+  }
+  
+  .closing-cta__primary:focus-visible,
+  .closing-cta__secondary a:focus-visible {
+    outline: 3px solid #082556;
+    outline-offset: 4px;
+  }
+  
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .closing-cta {
+      padding-block: 76px;
+    }
+  
+    .closing-cta__container {
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 50px;
+    }
+  
+    .closing-cta__title {
+      font-size: clamp(40px, 6vw, 62px);
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 767px) {
+    .closing-cta {
+      padding: 64px 20px;
+    }
+  
+    .closing-cta__container {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+  
+    .closing-cta__label {
+      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+    }
+  
+    .closing-cta__title {
+      max-width: 680px;
+      font-size: clamp(36px, 11vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+  
+    .closing-cta__actions {
+      width: 100%;
+      max-width: 360px;
+    }
+  
+    .closing-cta__primary {
+      min-height: 54px;
+      padding: 13px 20px;
+      border-radius: 16px;
+      font-size: 15px;
+    }
+  
+    .closing-cta__secondary {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 24px;
+      row-gap: 0;
+    }
+  }
+  
+  /* Mobile kecil */
+  @media (max-width: 420px) {
+    .closing-cta {
+      padding-inline: 16px;
+    }
+  
+    .closing-cta__title {
+      font-size: 38px;
+    }
+  
+    .closing-cta__secondary {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  /* Mengurangi gerakan bagi pengguna yang memilih reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .closing-cta__primary,
+    .closing-cta__primary::after,
+    .closing-cta__secondary a::after {
+      transition: none;
+    }
+  
+    .closing-cta__primary:hover {
+      transform: none;
+    }
+  }
 /* ---------- Section Kurasi ---------- */
 :root {
   --green-600: #1f8a4d;
