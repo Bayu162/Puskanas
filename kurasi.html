@@ -11,6 +11,286 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* =====================================================
+         KURASI MINIMALIS - HALAMAN KURASI
+         Data dan struktur tetap. Hanya tampilan yang diubah.
+         ===================================================== */
+      body {
+        background: #fffaf2;
+        color: #082556;
+      }
+
+      .kurasi-page {
+        width: min(100%, 1120px);
+        margin-inline: auto;
+        padding: clamp(56px, 7vw, 92px) 24px 88px;
+      }
+
+      .kurasi-hero {
+        display: block;
+        max-width: 900px;
+        margin-bottom: 54px;
+      }
+
+      .kurasi-hero__copy,
+      .kurasi-hero__summary {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .kurasi-hero__copy {
+        min-height: 0;
+      }
+
+      .kurasi-hero__copy::after {
+        display: none;
+      }
+
+      .kurasi-eyebrow {
+        display: inline-block;
+        margin: 0 0 18px;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: #e87918;
+        font-size: 0.75rem;
+        font-weight: 800;
+        line-height: 1.4;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .kurasi-hero h1 {
+        max-width: 760px;
+        margin: 0;
+        color: #082556;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: clamp(3rem, 6vw, 5.6rem);
+        font-weight: 800;
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+      }
+
+      .kurasi-hero__summary {
+        margin-top: 24px;
+      }
+
+      .kurasi-hero__summary p {
+        max-width: 820px;
+        margin: 0;
+        color: #29466f;
+        font-size: 1rem;
+        line-height: 1.82;
+      }
+
+      .kurasi-info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(28px, 5vw, 68px);
+        margin: 0 0 66px;
+      }
+
+      .kurasi-info-card,
+      .kurasi-info-card.is-warning {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .kurasi-info-card::before,
+      .kurasi-info-card.is-warning::before {
+        display: none;
+      }
+
+      .kurasi-info-card h2 {
+        margin: 0 0 13px;
+        color: #082556;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: clamp(1.3rem, 2vw, 1.65rem);
+        font-weight: 800;
+        line-height: 1.25;
+      }
+
+      .kurasi-info-card p {
+        margin: 0;
+        color: #49617f;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .kurasi-list {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .kurasi-list-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.65fr);
+        align-items: end;
+        gap: 32px;
+        margin-bottom: 24px;
+        padding: 0;
+        border: 0;
+      }
+
+      .kurasi-list-head h2 {
+        margin: 0;
+        color: #082556;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: clamp(1.85rem, 3vw, 2.7rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      .kurasi-list-head p {
+        margin: 0;
+        color: #49617f;
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+
+      .kurasi-table {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .kurasi-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 24px;
+        min-width: 0;
+        min-height: 104px;
+        padding: 24px 26px;
+        border: 0;
+        border-radius: 20px;
+        background: #f4b12b;
+        box-shadow: none;
+        transition:
+          transform 180ms ease,
+          background-color 180ms ease;
+      }
+
+      .kurasi-row::before {
+        display: none;
+      }
+
+      .kurasi-row:hover {
+        transform: translateY(-2px);
+        background: #f0a91f;
+        box-shadow: none;
+      }
+
+      .kurasi-row-title {
+        margin: 0 0 7px;
+        color: #082556;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.42;
+      }
+
+      .kurasi-row-meta {
+        color: #173f71;
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .kurasi-status {
+        justify-self: end;
+        width: auto;
+        max-width: 100%;
+        min-height: 34px;
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 14px;
+        border: 0;
+        border-radius: 999px;
+        background: #ffffff !important;
+        color: #082556 !important;
+        font-size: 0.72rem;
+        font-weight: 800;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      .kurasi-note {
+        margin: 24px 0 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: #49617f;
+        font-size: 0.88rem;
+        line-height: 1.72;
+      }
+
+      @media (max-width: 820px) {
+        .kurasi-info-grid {
+          grid-template-columns: 1fr;
+          gap: 34px;
+        }
+
+        .kurasi-list-head {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .kurasi-page {
+          padding: 46px 16px 64px;
+        }
+
+        .kurasi-hero {
+          margin-bottom: 44px;
+        }
+
+        .kurasi-hero h1 {
+          font-size: clamp(2.7rem, 13vw, 4rem);
+        }
+
+        .kurasi-info-grid {
+          margin-bottom: 52px;
+        }
+
+        .kurasi-row {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          min-height: 0;
+          padding: 22px 20px;
+          border-radius: 18px;
+        }
+
+        .kurasi-status {
+          justify-self: start;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .kurasi-row {
+          transition: none;
+        }
+
+        .kurasi-row:hover {
+          transform: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -24,23 +304,29 @@
           class="btn-app"
           target="_blank"
           rel="noopener"
-          >Masuk ke Aplikasi</a>
+          >Masuk ke Aplikasi</a
+        >
       </div>
     </header>
 
-    <div class="wrap">
+    <main class="kurasi-page">
       <section class="kurasi-hero">
-        <span class="kurasi-eyebrow">Portal Publikasi Hasil Kurasi</span>
-        <h1>Kurasi Ajang Talenta</h1>
-        <p>
-          Transparansi proses pengajuan kurasi ajang talenta di ekosistem
-          PUSKANAS melalui Sistem Informasi Manajemen Talenta (SIMT)
-          Kemendikdasmen.
-        </p>
+        <div class="kurasi-hero__copy">
+          <span class="kurasi-eyebrow">Portal Publikasi Hasil Kurasi</span>
+          <h1>Kurasi Ajang Talenta</h1>
+        </div>
+
+        <div class="kurasi-hero__summary">
+          <p>
+            Transparansi proses pengajuan kurasi ajang talenta di ekosistem
+            PUSKANAS melalui Sistem Informasi Manajemen Talenta (SIMT)
+            Kemendikdasmen.
+          </p>
+        </div>
       </section>
 
       <section class="kurasi-info-grid">
-        <div class="kurasi-info-card">
+        <article class="kurasi-info-card">
           <h2>Apa itu Kurasi?</h2>
           <p>
             Kurasi talenta adalah proses mengidentifikasi, menilai, dan
@@ -49,16 +335,17 @@
             Pusat Prestasi Nasional, dan hasilnya tercatat pada basis data
             manajemen talenta nasional (SIMT).
           </p>
-        </div>
-        <div class="kurasi-info-card is-warning">
+        </article>
+
+        <article class="kurasi-info-card is-warning">
           <h2>Perhatian Penting</h2>
           <p>
             Pengajuan kurasi melalui proses verifikasi berjenjang, sehingga
-            waktu prosesnya bervariasi. Jika kamu berencana menggunakan
-            prestasi untuk jalur prestasi (japres), ikuti kompetisi jauh
-            sebelum jalur tersebut dibuka agar status kurasi sempat terbit.
+            waktu prosesnya bervariasi. Jika kamu berencana menggunakan prestasi
+            untuk jalur prestasi (japres), ikuti kompetisi jauh sebelum jalur
+            tersebut dibuka agar status kurasi sempat terbit.
           </p>
-        </div>
+        </article>
       </section>
 
       <section class="kurasi-list">
@@ -71,11 +358,11 @@
 
         <p class="kurasi-note">
           Status di atas menunjukkan progres pengajuan internal dan dapat
-          berubah mengikuti hasil verifikasi resmi Kemendikdasmen. Status
-          final yang berlaku adalah yang tercatat di SIMT.
+          berubah mengikuti hasil verifikasi resmi Kemendikdasmen. Status final
+          yang berlaku adalah yang tercatat di SIMT.
         </p>
       </section>
-    </div>
+    </main>
 
     <footer>
       <div class="footer-inner">
