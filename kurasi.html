@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurasi Ajang Talenta — PUSKANAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo"
+          ><img src="logo.png" alt="PUSKANAS — Pusat Kejuaraan Sains Nasional"
+        /></a>
+        <nav></nav>
+        <a
+          href="https://app.puskanas.id/"
+          class="btn-app"
+          target="_blank"
+          rel="noopener"
+          >Masuk ke Aplikasi</a>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <section class="kurasi-hero">
+        <span class="kurasi-eyebrow">Portal Publikasi Hasil Kurasi</span>
+        <h1>Kurasi Ajang Talenta</h1>
+        <p>
+          Transparansi proses pengajuan kurasi ajang talenta di ekosistem
+          PUSKANAS melalui Sistem Informasi Manajemen Talenta (SIMT)
+          Kemendikdasmen.
+        </p>
+      </section>
+
+      <section class="kurasi-info-grid">
+        <div class="kurasi-info-card">
+          <h2>Apa itu Kurasi?</h2>
+          <p>
+            Kurasi talenta adalah proses mengidentifikasi, menilai, dan
+            memberikan pengakuan resmi terhadap suatu ajang dan/atau prestasi
+            peserta didik. Proses ini dilakukan oleh Kemendikdasmen melalui
+            Pusat Prestasi Nasional, dan hasilnya tercatat pada basis data
+            manajemen talenta nasional (SIMT).
+          </p>
+        </div>
+        <div class="kurasi-info-card is-warning">
+          <h2>Perhatian Penting</h2>
+          <p>
+            Pengajuan kurasi melalui proses verifikasi berjenjang, sehingga
+            waktu prosesnya bervariasi. Jika kamu berencana menggunakan
+            prestasi untuk jalur prestasi (japres), ikuti kompetisi jauh
+            sebelum jalur tersebut dibuka agar status kurasi sempat terbit.
+          </p>
+        </div>
+      </section>
+
+      <section class="kurasi-list">
+        <div class="kurasi-list-head">
+          <h2>Progress Kurasi Ajang</h2>
+          <p>Status pengajuan kurasi tiap kompetisi di ekosistem PUSKANAS.</p>
+        </div>
+
+        <div class="kurasi-table" id="kurasiTable"></div>
+
+        <p class="kurasi-note">
+          Status di atas menunjukkan progres pengajuan internal dan dapat
+          berubah mengikuti hasil verifikasi resmi Kemendikdasmen. Status
+          final yang berlaku adalah yang tercatat di SIMT.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            © 2026 PUSKANAS. Seluruh hak cipta dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data-kompetisi.js"></script>
+    <script src="kurasi.js"></script>
+  </body>
+</html>

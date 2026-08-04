@@ -525,39 +525,41 @@
         <p><strong>Kurasi ajang</strong> adalah proses verifikasi dan penilaian kelayakan sebuah event oleh instansi/lembaga terkait sebelum event dinyatakan resmi terkurasi. Event yang <strong>diselenggarakan</strong> oleh brand di ekosistem PUSKANAS tidak otomatis <strong>terkurasi</strong> — status ini hanya diberikan setelah melalui tahapan verifikasi dan disetujui oleh instansi terkait.</p>
       </div>
 
-      <div class="kurasi-timeline">
-        <div class="kurasi-tl-item">
-          <span class="kurasi-tl-dot kurasi-badge--belum"></span>
-          <div class="kurasi-tl-body">
-            <span class="kurasi-tl-label">Belum Diajukan</span>
-            <p>Event belum masuk proses pengajuan kurasi ke instansi terkait.</p>
-          </div>
-        </div>
-        <div class="kurasi-tl-item">
-          <span class="kurasi-tl-dot kurasi-badge--proses"></span>
-          <div class="kurasi-tl-body">
-            <span class="kurasi-tl-label">Dalam Proses</span>
-            <p>Pengajuan sudah dikirim dan sedang diverifikasi oleh instansi terkait.</p>
-          </div>
-        </div>
-        <div class="kurasi-tl-item">
-          <span class="kurasi-tl-dot kurasi-badge--revisi"></span>
-          <div class="kurasi-tl-body">
-            <span class="kurasi-tl-label">Perlu Revisi</span>
-            <p>Ada catatan dari instansi terkait yang perlu dilengkapi sebelum lanjut.</p>
-          </div>
-        </div>
-        <div class="kurasi-tl-item">
-          <span class="kurasi-tl-dot kurasi-badge--selesai"></span>
-          <div class="kurasi-tl-body">
-            <span class="kurasi-tl-label">Terkurasi</span>
-            <p>Event dinyatakan lolos dan disetujui resmi oleh instansi terkait.</p>
-          </div>
-        </div>
+      <div class="kurasi-list-head">
+        <span>Informasi Kompetisi</span>
+        <span>Status</span>
       </div>
+      <div class="kurasi-events" id="kurasiEvents"></div>
 
       <p class="kurasi-disclaimer"><strong>Penting:</strong> Status di atas ditampilkan apa adanya per event. Keputusan akhir kurasi sepenuhnya berada di tangan instansi/lembaga terkait, bukan ditentukan oleh PUSKANAS. Lihat <a href="faq.html">FAQ kategori Kurasi</a> untuk pertanyaan lainnya.</p>
 
+    </div>
+  </section>
+
+  <section class="kolaborasi-section" id="kolaborasi">
+    <div class="kolaborasi-inner">
+      <h2>Bertumbuh melalui kolaborasi</h2>
+      <p>Bersama PT KAR, kami membuka jalan baru untuk pertumbuhan melalui ekosistem yang saling menguntungkan dan inovasi berkelanjutan.</p>
+    </div>
+
+    <div class="mitra-marquee" aria-label="Mitra kolaborasi PUSKANAS">
+      <div class="mitra-track">
+        <span class="mitra-logo"><img src="assets/images/mitra/J&T_Express_logo.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-alyone-daily.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-alyone-shop.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-busana-aksara.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-daffa-kreatif.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-pt-multi-karya.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/Logo_JNE.png" alt=""></span>
+        <!-- duplikat buat efek loop tak berujung -->
+        <span class="mitra-logo"><img src="assets/images/mitra/J&T_Express_logo.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-alyone-daily.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-alyone-shop.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-busana-aksara.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-daffa-kreatif.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/logo-pt-multi-karya.webp" alt=""></span>
+        <span class="mitra-logo"><img src="assets/images/mitra/Logo_JNE.png" alt=""></span>
+      </div>
     </div>
   </section>
 
@@ -574,18 +576,24 @@
     </div>
 
     <div class="closing-cta__actions">
-
-      <div class="closing-cta__secondary">
-        <a href="#aplikasi">
-          Masuk ke Aplikasi
-        </a>
-
-        <a href="#kontak">
-          Hubungi Admin
-        </a>
-      </div>
+      <a
+        class="closing-cta__button"
+        href="#aplikasi"
+        aria-label="Masuk ke Aplikasi PUSKANAS"
+      >
+        <span>Masuk ke Aplikasi</span>
+        <span class="closing-cta__arrow" aria-hidden="true">↗</span>
+      </a>
+    
+      <a
+        class="closing-cta__button"
+        href="#kontak"
+        aria-label="Hubungi Admin PUSKANAS"
+      >
+        <span>Hubungi Admin</span>
+        <span class="closing-cta__arrow" aria-hidden="true">↗</span>
+      </a>
     </div>
-  </div>
 </section>
 
   <footer>
@@ -727,11 +735,13 @@
     </div>
   </div>
 
+<script src="data-kompetisi.js"></script>
 <script src="data-testimoni.js"></script>
 <script src="testimoni.js"></script>
 <script src="data-brand.js"></script>
 <script src="ekosistem-brand.js"></script>
 <script src="assets/js/brand-orbit.js"></script>
+<script src="kurasi-events.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
