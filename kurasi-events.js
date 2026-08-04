@@ -1,6 +1,6 @@
 (function () {
   const wrap = document.getElementById('kurasiEvents');
-  if (!wrap || typeof KOMPETISI === 'undefined') return;
+  if (!wrap || typeof KURASI_EVENTS === 'undefined') return;
 
   const STATUS_LABEL = {
     belum: 'Belum Diajukan',
@@ -9,10 +9,8 @@
     selesai: 'Terkurasi'
   };
 
-  Object.keys(KOMPETISI).forEach(id => {
-    const k = KOMPETISI[id];
-    // Status default 'proses' — ganti manual per event kalau statusnya sudah dikonfirmasi instansi terkait.
-    const status = k.statusKurasi || 'proses';
+  KURASI_EVENTS.forEach(k => {
+    const status = k.status || 'proses';
 
     const row = document.createElement('div');
     row.className = 'kurasi-event-row';
@@ -20,10 +18,10 @@
     const info = document.createElement('div');
     const title = document.createElement('div');
     title.className = 'kurasi-event-title';
-    title.textContent = k.title;
+    title.textContent = k.judul;
     const meta = document.createElement('div');
     meta.className = 'kurasi-event-meta';
-    meta.textContent = k.brand + ' · ' + k.tingkat;
+    meta.textContent = k.sub + ' · ' + k.kategori + ' · ' + k.negara;
     info.append(title, meta);
 
     const badge = document.createElement('span');
